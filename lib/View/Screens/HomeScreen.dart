@@ -1,27 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:furniture_app/Model/ProductModel.dart';
+import 'package:furniture_app/View/Widgets/NewProduct.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     Key? key,
   }) : super(key: key);
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List exImage = [
-    'images/f.jpg',
-    'images/f0.jpg',
-    'images/f5.jpg',
-    'images/f3.jpg',
-  ];
-  List type = [
-    'Chairs',
-    'Sofa',
-    'Tables',
-  ];
   var selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -29,14 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           backgroundColor: const Color(0xff44655E),
           leading: const Icon(
-            Icons.menu,
-            size: 27,
-          ),
+            Icons.menu, size: 27,),
           actions: [
             const Icon(
-              Icons.search,
-              size: 27,
-            ),
+              Icons.search, size: 27,),
             Container(
               width: 45,
               margin:
@@ -77,8 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       )),
                 ),
                 Positioned(
-                    top: 105,
-                    left: 35,
+                    top: 105, left: 35,
                     child: SizedBox(
                       height: 240,
                       width: MediaQuery.of(context).size.width,
@@ -90,8 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             return Padding(
                               padding: const EdgeInsets.only(right: 30),
                               child: Container(
-                                height: 250,
-                                width: 180,
+                                height: 250, width: 180,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(15),
                                     color: Colors.grey.shade300,
@@ -105,9 +88,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             Container(
-                height: 55,
-                width: 350,
-                margin: const EdgeInsets.only(top: 110, right: 10, left: 60),
+                height: 55, width: 350,
+                margin: const EdgeInsets.only(top: 110, right: 20, left: 50),
                 child: GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
@@ -130,11 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ? const Color(0xff44655E)
                                 : Colors.white,
                             border: Border.all(
-                                color: const Color(
-                                  0xff44655E,
-                                ),
-                                width: 2),
-                          ),
+                                color: const Color(0xff44655E,), width: 2),),
                           child: Center(
                               child: Text(
                             type[index],
@@ -155,88 +133,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.only(top: 50,left: 35),
-                  child: Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      Container(
-                        width: 165,
-                        height: 170,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color(0xffD2E2E9),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(left: 8, top: 10),
-                              child: Text(
-                                'Green Chair',
-                                style: TextStyle(
-                                    color: Color(0xff44655E),
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 19),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: const [
-                                  Text(
-                                    '\$ 65',
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Color(0xff44655E),
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                  Spacer(),
-                                  Icon(
-                                    Icons.star,
-                                    size: 16,
-                                    color: Color(0xff44655E),
-                                  ),
-                                  Text(
-                                    '4.5',
-                                    style: TextStyle(
-                                        color: Color(0xff44655E),
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                          left: 90,
-                          top: -10,
-                          child: Container(
-                            height: 20,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(35),
-                              color: const Color(0xff44655E),
-                            ),
-                            child: const Center(
-                                child: Text(
-                                  'New',
-                                  style: TextStyle(
-                                      color: Colors.white, fontWeight: FontWeight.w600),
-                                )),
-                          )),
-                      Positioned(
-                          left: -15,
-                          bottom: -5,
-                          child: Image.asset(
-                            'images/f4.png',
-                            width: 185,
-                          )),
-                    ],
-                  ),
-                );
-              }),
+                    return NewProductWidget(product: pDetails[index],);
+                  }),
             )
           ],
         ));
