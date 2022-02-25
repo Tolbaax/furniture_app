@@ -1,4 +1,6 @@
 # furniture_app
+![furnturee](https://user-images.githubusercontent.com/68785353/155747574-e112a907-df46-40b8-95ff-8e9c692e90f1.png)
+
 A new Flutter project.
 
 ## Getting Started
