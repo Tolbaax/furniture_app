@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class ProductModel {
   String? pName;
   String? pPrice;
@@ -9,17 +11,17 @@ class ProductModel {
 List<ProductModel> pDetails = [
   ProductModel(
       pName: 'Wingback chair',
-      pPrice: '\$ 65',
+      pPrice: '\$65',
       pRate: '4.9',
       imageUrl: 'images/f1.png'),
   ProductModel(
-      pName: 'Fauteuil chair ',
-      pPrice: '\$ 86',
+      pName: 'Fauteuil chair',
+      pPrice: '\$86',
       pRate: '4.6',
       imageUrl: 'images/f4.png'),
   ProductModel(
       pName: 'White chair',
-      pPrice: '\$ 50',
+      pPrice: '\$50',
       pRate: '3.6',
       imageUrl: 'images/05.png'),
 ];
@@ -35,4 +37,12 @@ List type = [
   'Chairs',
   'Sofa',
   'Tables',
+];
+
+List colors = [
+  Colors.redAccent,
+  Colors.teal,
+  const Color(0xff44655E),
+  const Color(0xff839793),
+  const Color(0xffD2E2E9),
 ];
