@@ -1,4 +1,4 @@
-# furniture_app
+# Furniture App UI
 ![furnturee](https://user-images.githubusercontent.com/68785353/155747896-42157bb1-92af-4553-9670-c18a91717203.png)
 
 A new Flutter project.
